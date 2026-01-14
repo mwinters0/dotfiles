@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "cache": {
+    "ttl_secs": 86400
+  },
+  "scoring": {
+    "rules": [
+      {"text_found": "(?i)sre", "score": 1, "tags_why": ["ontarget"]},
+      {"text_found": "(?i)platform engineer", "score": 1, "tags_why": ["ontarget"]},
+      {"text_found": "(?i)reliability", "score": 1, "tags_why": ["ontarget"]},
+      {"text_found": "(?i)resiliency", "score": 1, "tags_why": ["ontarget"]},
+      {"text_found": "(?i)observability", "score": 1, "tags_why": ["ontarget"]},
+      {"text_found": "(?i)enterprise", "score": 1, "tags_why": ["growth"]},
+      {"text_found": "(?i)architect", "score": 1, "tags_why": ["growth"]},
+      {"text_found": "(?i)director", "score": 1, "tags_why": ["growth"]},
+      {"text_found": "(?i)principal", "score": 1, "tags_why": ["growth"]},
+      {"text_found": "(?i)staff\\b", "score": 1, "tags_why": ["growth"]},
+      {"text_found": "(?i)aws", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)\\brust\\b", "score": 1, "tags_why": ["tech", "memecred"], "style": {"Fg": "deeppink"}},
+      {"text_found": "(?i)golang", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)\\bgo\\b", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)\\bobjective-c\\b", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)linux", "score": 1, "tags_why": ["tech"]},
+      {"text_found": "(?i)open.?source", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)education", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)\\bheal", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)humanitarian", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)climate change", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)public benefit", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)nonprofit", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)\\$", "score": 2, "tags_why": ["values"]},
+      {"text_found": "(?i)virtasant", "score": -100, "tags_why": ["latam_only"]},
+      {"text_found": "(?i)nango", "score": -2, "tags_why": ["nodejs"], "style": {"Fg": "red"}},
+      {"text_found": "(?i)secondnature\\.com", "score": -2, "tags_why": ["nodejs"], "style": {"Fg": "red"}},
+      {"text_found": "(?i)neonhealth\\.com", "score": -2, "tags_why": ["nodejs"], "style": {"Fg": "red"}},
+      {"text_found": "(?i)checklyhq\\.com", "score": -2, "tags_why": ["eu_only"], "style": {"Fg": "red"}},
+      {"text_missing": "(?i)remote", "score": -100, "tags_why_not": ["onsite", "fsckbezos"]}
+    ]
+  },
+  "display": {
+    "theme": "default",
+    "score_threshold": 1
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "Version": 1,
+  "UI": {
+    "HeaderStatsDate": {
+      "Fg": "#f9f5d7",
+      "Bg": "#cc5200",
+      "Attrs": "",
+      "Url": ""
+    },
+    "HeaderStatsNormal": {
+      "Fg": "#1d2021",
+      "Bg": "orange",
+      "Attrs": "b",
+      "Url": ""
+    },
+    "HeaderStatsHidden": {
+      "Fg": "#BBBBBB",
+      "Bg": "#333333",
+      "Attrs": "",
+      "Url": ""
+    },
+    "FocusBorder": {
+      "Fg": "#f9f5d7",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "ModalTitle": {
+      "Fg": "#1d2021",
+      "Bg": "orange",
+      "Attrs": "",
+      "Url": ""
+    },
+    "ModalNormal": {
+      "Fg": "#f9f5d7",
+      "Bg": "#1d2021",
+      "Attrs": "",
+      "Url": ""
+    },
+    "ModalHighlight": {
+      "Fg": "orange",
+      "Bg": "#1d2021",
+      "Attrs": "",
+      "Url": ""
+    }
+  },
+  "CompanyList": {
+    "Chars": {
+      "Unread": "*",
+      "Read": " ",
+      "Applied": "🗹",
+      "Uninterested": "⨯",
+      "Priority": "★"
+    },
+    "Colors": {
+      "CompanyName": {
+        "Fg": "deepskyblue",
+        "Bg": "#1d2021",
+        "Attrs": "",
+        "Url": ""
+      },
+      "CompanyNameUnread": {
+        "Fg": "",
+        "Bg": "",
+        "Attrs": "b",
+        "Url": ""
+      },
+      "CompanyNamePriority": {
+        "Fg": "#1d2021",
+        "Bg": "orange",
+        "Attrs": "",
+        "Url": ""
+      },
+      "CompanyNameApplied": {
+        "Fg": "",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "CompanyNameUninterested": {
+        "Fg": "grey",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "StatusChar": {
+        "Fg": "#f9f5d7",
+        "Bg": "#1d2021",
+        "Attrs": "",
+        "Url": ""
+      },
+      "StatusCharUnread": {
+        "Fg": "purple",
+        "Bg": "",
+        "Attrs": "b",
+        "Url": ""
+      },
+      "StatusCharPriority": {
+        "Fg": "#1d2021",
+        "Bg": "orange",
+        "Attrs": "",
+        "Url": ""
+      },
+      "StatusCharApplied": {
+        "Fg": "green",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "StatusCharUninterested": {
+        "Fg": "grey",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "Score": {
+        "Fg": "#f9f5d7",
+        "Bg": "#1d2021",
+        "Attrs": "",
+        "Url": ""
+      },
+      "ScoreUnread": {
+        "Fg": "",
+        "Bg": "",
+        "Attrs": "b",
+        "Url": ""
+      },
+      "ScorePriority": {
+        "Fg": "black",
+        "Bg": "orange",
+        "Attrs": "",
+        "Url": ""
+      },
+      "ScoreApplied": {
+        "Fg": "",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "ScoreUninterested": {
+        "Fg": "grey",
+        "Bg": "",
+        "Attrs": "",
+        "Url": ""
+      },
+      "SelectedItemBackground": {
+        "Fg": "",
+        "Bg": "#444444",
+        "Attrs": "",
+        "Url": ""
+      },
+      "FrameBackground": {
+        "Fg": "",
+        "Bg": "#1d2021",
+        "Attrs": "",
+        "Url": ""
+      },
+      "FrameHeader": {
+        "Fg": "#f9f5d7",
+        "Bg": "#cc5200",
+        "Attrs": "",
+        "Url": ""
+      }
+    }
+  },
+  "JobBody": {
+    "Normal": {
+      "Fg": "#f9f5d7",
+      "Bg": "#1d2021",
+      "Attrs": "",
+      "Url": ""
+    },
+    "CompanyName": {
+      "Fg": "deepskyblue",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "URL": {
+      "Fg": "#c69749",
+      "Bg": "",
+      "Attrs": "u",
+      "Url": ""
+    },
+    "Email": {
+      "Fg": "pink",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "PositiveHit": {
+      "Fg": "#a1f6ae",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "NegativeHit": {
+      "Fg": "red",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "Pre": {
+      "Fg": "#bbbbbb",
+      "Bg": "",
+      "Attrs": "",
+      "Url": ""
+    },
+    "FrameBackground": {
+      "Fg": "",
+      "Bg": "#1d2021",
+      "Attrs": "",
+      "Url": ""
+    },
+    "FrameHeader": {
+      "Fg": "#f9f5d7",
+      "Bg": "#cc5200",
+      "Attrs": "",
+      "Url": ""
+    }
+  }
+}

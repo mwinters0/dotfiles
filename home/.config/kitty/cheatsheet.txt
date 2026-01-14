@@ -1,0 +1,31 @@
+Ctrl-Shift:
+  Config:
+  - F2 = Edit kitty.conf
+  - F5 = Reload kitty.conf
+  - F6 = Show current config & env
+  Control:
+  - Up/Down/PgUp/PgDown = scrollback
+  - F10 - Toggle maximized
+  - F11 = Toggle Fullscreen
+  - U = unicode input
+  - Del = Reset terminal
+  Tabs:
+  - T = new tab
+  - Left/Right = next/prev tab
+  - . = move tab forward (left)
+  - , = move tab backwards (right)
+  - Alt-T = set tab title
+  - Q = close tab
+  Window:
+  - Enter / n = new window
+  - [] = next/prev window
+  - 1-9 = move to window n
+  - W = close window
+  - B/F = move window back/forward
+  -  = move window to top
+  - R = start resizing
+  Misc:
+  - Esc = kitty shell
+  - E = Open currently-visible URL
+  
+Select color scheme: `kitten themes`

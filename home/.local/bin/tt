@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# tt = terminal title
+
+if [ -n "$ZELLIJ_SESSION_NAME" ]; then
+	zellij action rename-pane "$1"
+else
+	echo -ne "\033]0; $1\a" < /dev/null
+fi

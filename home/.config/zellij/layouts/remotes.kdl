@@ -1,0 +1,45 @@
+layout {
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="cid" {
+        pane command="zsh" {
+            args "-c" "/usr/bin/mosh cid"
+            start_suspended true
+        }
+    }
+    tab name="wf1" {
+        pane command="zsh" {
+            args "-c" "/usr/bin/mosh wf1"
+            start_suspended true
+        }
+    }
+    tab name="mwinters-mail" {
+        pane command="zsh" {
+            args "-c" "/usr/bin/mosh mwinters-mail"
+            start_suspended true
+        }
+    }
+    tab name="he" {
+        pane command="zsh" {
+            args "-c" "/usr/bin/mosh he"
+            start_suspended true
+        }
+    }
+    tab name="luzita" {
+        pane command="zsh" {
+            args "-c" "/usr/bin/mosh luzita"
+            start_suspended true
+        }
+    }
+}
+session_name "remotes"
+attach_to_session true
+pane_frames false

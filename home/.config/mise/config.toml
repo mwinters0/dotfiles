@@ -1,0 +1,23 @@
+[tools]
+age = "latest"
+atuin = "latest"
+awscli = "latest"
+cfssl = "latest"
+cfssljson = "latest"
+chezmoi = "latest"
+duckdb = "latest"
+gitui = "latest"
+helm = "latest"
+hugo = "latest"
+uv = "latest"
+zellij = "latest"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = []
+
+[settings.status]
+show_env = true
+show_tools = true
+truncate = false
+missing_tools = "always"
