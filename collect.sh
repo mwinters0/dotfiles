@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: ts=4:sw=4:expandtab
 
-set -ex
+set -e
 
 # Sanity check
 : "${HOME:?[\$HOME isn\'t set]}"
@@ -62,11 +62,11 @@ collect_files "$HOME" "$SCRIPT_DIR/home" home_files
 
 # ~/.config
 # shellcheck disable=SC2034
-config_dirs=(atuin hnjobs kitty mise nvim zellij)
+config_dirs=(atuin bat hnjobs kitty mise nvim systemd zellij)
 collect_dirs "$HOME/.config" "$SCRIPT_DIR/home/.config" config_dirs
 
 # ~/.local/bin
 # shellcheck disable=SC2034
-bin_files=(dmsg.sh rec set_color_aliases.sh sshmount.sh sshumount.sh tt unset_color_aliases.sh)
+bin_files=(dmesg.sh rec lhist.sh set_color_aliases.sh sshmount.sh sshumount.sh tt unset_color_aliases.sh)
 collect_files "$HOME/.local/bin" "$SCRIPT_DIR/home/.local/bin" bin_files
 
