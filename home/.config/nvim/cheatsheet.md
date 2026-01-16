@@ -1,3 +1,7 @@
+<!---
+vim: ts=2:sw=2:expandtab
+-->
+
 # Most Common
 
 ## Update Plugins / LSPs
@@ -5,11 +9,17 @@
 - `:Mason`
 
 
-## Bindings
+## Keymap
 ### UI
-- `|` = Open Neo-Tree
-  - `?` = show help
+- Open Neo-Tree (file browser): `|`
+  - Help: `?`
+  - Preview: `P`
+    - Scroll preview: `Ctrl-f` / `Ctrl-b`
+    - Focus preview: `l` ("l"ook)
 - Redraw screen: `Ctrl-L`
+- `:Telescope <tab>`
+- `:lua Snacks.notifier.show_history()`
+- `:lua Snacks.indent.disable()`
 
 ### Diagnostics
 - Show diagnostics of current line: `Ctrl-W d`
@@ -24,7 +34,8 @@
 
 
 ## Misc UI
-- `:Telescope <tab>`
+
+### Tricks
 - Diff unsaved: `:w !diff % -`
 
 ### Insert mode
@@ -35,17 +46,14 @@
   - Home / End: `Ctrl-O 0` / `Ctrl-O $`
 
 #### Edit
+- Indent: `Ctrl-T`
+- OutIndent: `Ctrl-D`
 - Delete word: `Ctrl-W`
-- Delete line: `Ctrl-U`
-
-- Paste the last yank: `Ctrl-R "`
-- Paste register a: `Ctrl-R a`
 
 - Execute a normal command: `Ctrl-O`
 
-- Indent: `Ctrl-T`
-- UnIndent: `Ctrl-t` # ???
-
+- Paste the last yank: `Ctrl-R "`
+- Paste register a: `Ctrl-R a`
 
 
 ## Tabs (`:h tabpage`)
@@ -73,12 +81,63 @@
 ---
 
 
-
 # Reference
 
-## Config (:h options)
-:set tw? - Show config value
-:set!    - Show all non-default options
-:opt     - Browse all options
+## Config
+- Set / unset a flag: `:set guioptions+=a` / `:set guioptions -=a`
 
-:set guioptions+=a / :set guioptions -=a  - set a flag
+### Inspecting Config
+- Show config value: `:set tw?`
+- Show all non-default options: `:set!`
+- Browse all options: `:opt` / `:h options`
+- Inspect keymaps
+  - User keymaps: 
+    - All / Insert / Normal / Visual: `:map` / `:imap` / `:nmap` / `:vmap`
+    - Inspect origin: `:verbose imap <C-o>`
+  - Builtin keymaps:
+    - All / Insert / Normal / Visual: `:h index` / `:h insert-index` / `:h normal-index` / `:h visual-index`
+    - Individual Insert / Normal / Visual: `:h i_CTRL-O` / `:h CTRL-O` / `:h v_CTRL-O`
+
+
+---
+
+
+# TODO
+## Fixes WIP
+- finish snacks
+- insert mode O and o?
+
+## visual / UI
+- git signs / etc
+- aerial integrations / plugins / keymap
+- telescope integrations / plugins / keymap
+- whitespace
+  - toggle visible
+  - auto-trim trailing
+
+## edit
+- surround actions, e.g. "surround this word in quotes"
+
+## assistance
+- Mason non-LSP (formatters, linters, etc)
+  - `ensure_installed`?
+  - How to trigger / autotrigger?
+- LSP
+  - project-wide code actions, e.g. rename / refactor
+- LLM
+
+## tweaks / productivity
+- per-filetype preferences
+  - indentation / etc
+  - colorscheme overrides (chill, gruvbox)
+- sessions
+
+## misc
+- terminal
+- snippets
+
+## whatis
+- altfile
+- quickfixes
+
+

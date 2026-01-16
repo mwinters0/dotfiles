@@ -1,7 +1,7 @@
 -- Aerial provides a code outline window
--- https://github.com/stevearc/aerial.nvim
+
 return {{
-  'stevearc/aerial.nvim',
+  'https://github.com/stevearc/aerial.nvim',
   opts = {
     layout = {
       default_direction = "float",
