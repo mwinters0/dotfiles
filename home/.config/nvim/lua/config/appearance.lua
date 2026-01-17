@@ -3,7 +3,7 @@
 vim.cmd("colorscheme gruvbox")
 
 
--- Add columncolor for git commits
+-- Git commits: columncolor
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gitcommit" },
   callback = function()
@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
+-- Diagnostics
 vim.diagnostic.config({
   -- https://neovim.io/doc/user/diagnostic.html#vim.diagnostic.Opts
   -- virtual_text = true,      -- show inline messages at line ending
@@ -24,3 +25,7 @@ vim.diagnostic.config({
   update_in_insert = false, -- don't update diagnostics while typing
   severity_sort = true,     -- sort diagnostics by severity
 })
+
+-- nvim 0.12!
+-- This is from https://github.com/mikesmithgh/borderline.nvim/blob/main/lua/borderline/borders.lua
+-- vim.o.winborder = '🭽,▔,🭾,▕,🭿,▁,🭼,▏'

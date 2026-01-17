@@ -8,44 +8,32 @@ vim: ts=2:sw=2:expandtab
 - `:Lazy`
 - `:Mason`
 
-
-## Keymap
-### UI
+## UI
 - Open Neo-Tree (file browser): `|`
   - Help: `?`
   - Preview: `P`
     - Scroll preview: `Ctrl-f` / `Ctrl-b`
     - Focus preview: `l` ("l"ook)
-- Redraw screen: `Ctrl-L`
-- `:Telescope <tab>`
-- `:lua Snacks.notifier.show_history()`
-- `:lua Snacks.indent.disable()`
+- fzf everything`:Telescope <tab>`
+- Notification history: `:lua Snacks.notifier.show_history()`
+- Disable indent markers: `:lua Snacks.indent.disable()`
+- Show (or do) git stuff: `:Gitsigns <tab>`
+- Redraw screen: `Ctrl-l` ("el")
 
-### Diagnostics
+### LSP Diagnostics
 - Show diagnostics of current line: `Ctrl-W d`
 - Next / Prev diagnostic: `]d`, `[d`
 
-#### Autocomplete (`:h ins-completion`, `:h autocomplete`)
-- Accept: `Ctrl-Y` ("yes")
-- Cycle Forward / Backward: `Ctrl-N` / `Ctrl-P`
+### Autocomplete (`:h ins-completion`, `:h autocomplete`)
+- Accept: `Ctrl-Y` ("yes") / my config: `<Ctrl-CR>`
+- Cycle Suggestions Forward / Backward: `Ctrl-N` / `Ctrl-P`
 - Cancel: `Ctrl-E` ("end")
 - Trigger Omni: `Ctrl-X Ctrl-O`
 - Enable: `:set ac`
 
 
-## Misc UI
-
-### Tricks
-- Diff unsaved: `:w !diff % -`
-
-### Insert mode
-#### Movement
-- Page Up / Down: `Shift-Up` / `Shift-Down`
-- Word left / right: `Ctrl-Left` or `Shift-Left` / `Right`
-- Execute a normal command: `Ctrl-O`
-  - Home / End: `Ctrl-O 0` / `Ctrl-O $`
-
-#### Edit
+## Insert mode
+### Edit
 - Indent: `Ctrl-T`
 - OutIndent: `Ctrl-D`
 - Delete word: `Ctrl-W`
@@ -54,6 +42,19 @@ vim: ts=2:sw=2:expandtab
 
 - Paste the last yank: `Ctrl-R "`
 - Paste register a: `Ctrl-R a`
+### Movement
+- Page Up / Down: `Shift-Up` / `Shift-Down`
+- Word left / right: `Ctrl-Left` or `Shift-Left` / `Right`
+- Execute a normal command: `Ctrl-O`
+  - Home / End: `Ctrl-O 0` / `Ctrl-O $`
+
+## Normal mode
+### Surround
+- Add: `ys<motion>}`
+- Delete: `ds}`
+
+## Tricks
+- Diff unsaved: `:w !diff % -`
 
 
 ## Tabs (`:h tabpage`)
@@ -88,6 +89,7 @@ vim: ts=2:sw=2:expandtab
 
 ### Inspecting Config
 - Show config value: `:set tw?`
+  - Inspect where this was set: `:verbose set tw?`
 - Show all non-default options: `:set!`
 - Browse all options: `:opt` / `:h options`
 - Inspect keymaps
@@ -98,6 +100,9 @@ vim: ts=2:sw=2:expandtab
     - All / Insert / Normal / Visual: `:h index` / `:h insert-index` / `:h normal-index` / `:h visual-index`
     - Individual Insert / Normal / Visual: `:h i_CTRL-O` / `:h CTRL-O` / `:h v_CTRL-O`
 
+### Filetypes
+- Default: `/usr/share/nvim/runtime/ftplugin/`
+  - Indent: `/usr/share/nvim/runtime/indent/`
 
 ---
 
@@ -105,10 +110,8 @@ vim: ts=2:sw=2:expandtab
 # TODO
 ## Fixes WIP
 - finish snacks
-- insert mode O and o?
 
 ## visual / UI
-- git signs / etc
 - aerial integrations / plugins / keymap
 - telescope integrations / plugins / keymap
 - whitespace
@@ -127,9 +130,6 @@ vim: ts=2:sw=2:expandtab
 - LLM
 
 ## tweaks / productivity
-- per-filetype preferences
-  - indentation / etc
-  - colorscheme overrides (chill, gruvbox)
 - sessions
 
 ## misc
@@ -139,5 +139,4 @@ vim: ts=2:sw=2:expandtab
 ## whatis
 - altfile
 - quickfixes
-
 

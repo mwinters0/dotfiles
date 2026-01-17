@@ -19,10 +19,21 @@ return {
       indent = { -- scope gutters
         enabled = true,
         animate = { enabled = false },
-        -- Don't colorize the cursor's scope
-        scope = { enabled = false },
+        scope = { enabled = true }, --colorize scope?
+        chunk = { -- only in innermost scope?
+          enabled = true,
+          only_current = true, -- only in current window
+          char = {
+            -- https://unicode-explorer.com/b/2500
+            corner_top = "╭",
+            corner_bottom = "╰",
+            horizontal = "╴", -- top edge
+            vertical = "│",
+            arrow = "╴", -- bottom edge
+          },
+        },
       },
-      input = { -- text input ui
+      input = { -- text input box
         enabled = true
       },
       -- keymap = { enabled = true },

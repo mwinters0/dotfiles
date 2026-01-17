@@ -13,7 +13,11 @@ return {
     },
     lazy = false, -- neo-tree will lazily load itself
     opts = {
-      -- TODO: When selecting a file, either keep focus in neo-tree or close it
+      default_component_configs = {
+        container = {
+          right_padding = 1, -- make room for scrollbar
+        },
+      },
       enable_diagnostics = false,
       filesystem = {
         filtered_items = {
@@ -84,24 +88,6 @@ return {
           ["S"] = nil,
           ["|"] = "return_focus",
         }, -- mappings
-        -- Can't set the _keepfocus options as default because it seems that
-        -- <CR> is special-cased and won't accept a new mapping.
-        -- mappings = {
-        --   -- Remap the standard keys to the _keepfocus versions
-        --   ["<CR>"] = "open_keepfocus",
-        --   ["t"] = "open_tabnew_keepfocus",
-        --   ["s"] = "open_split_keepfocus",
-        --   ["v"] = "open_vsplit_keepfocus",
-        --   -- Map the regular versions to Ctrl
-        --   ["<C-CR>"] = "open",
-        --   ["<C-t>"] = "open_tabnew",
-        --   ["<C-v>"] = "open_vsplit",
-        --   ["<C-s>"] = "open_split",
-        --   -- Nav
-        --   ["|"] = "return_focus",
-        --   -- Nobody needs this
-        --   ["S"] = nil,
-        -- }, -- mappings
       }, -- window
     }, -- opts
   }

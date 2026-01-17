@@ -3,10 +3,10 @@
 
 ------ # Options (:set foo) ------
 
-
 do
   -- vim.o is for primitive options (boolean, string, etc)
   vim.o.scrolloff   = 4    -- Keep context on screen
+  vim.o.foldlevel   = 99   -- Open files unfolded
   vim.o.showmatch   = true -- Briefly jump cursor to matching bracket when inserting (if on screen)
   vim.o.ignorecase  = true -- Searches with `/` are default case insensitive
   vim.o.smartcase   = true --   - Unless you use an uppercase character!
@@ -24,7 +24,6 @@ end
 
 ------ # Variables (:let foo) ------
 
-
 do
   -- Reference: vim.(g)lobal, (b)uffer, (w)indow, (t)abpage, (v)im, (env)
 
@@ -39,7 +38,6 @@ end
 
 
 ------ # Load plugins -----
-
 
 require("config.lazy") -- config/lazy.lua
 

@@ -4,14 +4,14 @@
 -- See also embedded keymaps:
 -- - plugins/lsp.lua
 -- - plugins/blink-cmp.lua
+-- - plugins/nvim-scrollview.lua
 -- - plugins/which-key.lua
 
 
 -- Neo-tree bindings
 vim.keymap.set('n', '|',
   function()
-    -- Save current window before focusing neo-tree, so that we can return
-    -- here with a binding within Neotree.
+    -- Save current window before focusing neo-tree
     _G.neo_tree_previous_win = vim.api.nvim_get_current_win()
     vim.cmd('Neotree focus')
   end,
