@@ -26,9 +26,19 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
 mkdir -p "$HOME/tmp" "$HOME/.local/"{bin,share/fonts}
 
-"$SCRIPT_DIR/install/literation_mono_nerdfont.sh"
-"$SCRIPT_DIR/install/fedora_cli.sh"
-"$SCRIPT_DIR/install/fedora_gui.sh"
-
-# TODO: copy all files
+cp -R "$SCRIPT_DIR/home/*" ~/
 # TODO: check systemd symlinks for username
+
+"$SCRIPT_DIR/install/dnf_cli_packages.sh"
+"$SCRIPT_DIR/install/fedora_contributor_packages.sh"
+"$SCRIPT_DIR/install/mise.sh"
+"$SCRIPT_DIR/install/rust.sh"
+"$SCRIPT_DIR/install/tailscale.sh"
+"$SCRIPT_DIR/install/dnf_gui_packages.sh"
+"$SCRIPT_DIR/install/literation_mono_nerdfont.sh"
+"$SCRIPT_DIR/install/neovide.sh"
+"$SCRIPT_DIR/install/fedora_disable_flatpak.sh"
+"$SCRIPT_DIR/install/flatpak_groups.sh" all
+
+gsettings set org.gnome.Ptyxis font-name 'LiterationMono Nerd Font Mono 12'
+

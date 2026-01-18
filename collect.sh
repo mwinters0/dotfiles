@@ -57,16 +57,38 @@ mkdir -p "$SCRIPT_DIR/home/.config" "$SCRIPT_DIR/home/.local/bin"
 
 # ~
 # shellcheck disable=SC2034
-home_files=(.gitconfig .zshenvm .zshrcm)
+home_files=(
+    .gitconfig
+    .zshenvm
+    .zshrcm
+)
 collect_files "$HOME" "$SCRIPT_DIR/home" home_files
 
 # ~/.config
 # shellcheck disable=SC2034
-config_dirs=(atuin bat hnjobs kitty mise nvim systemd zellij)
+config_dirs=(
+    atuin
+    bat
+    hnjobs
+    kitty
+    mise
+    nvim
+    systemd
+    zellij
+)
 collect_dirs "$HOME/.config" "$SCRIPT_DIR/home/.config" config_dirs
 
 # ~/.local/bin
 # shellcheck disable=SC2034
-bin_files=(dmesg.sh rec lhist.sh set_color_aliases.sh sshmount.sh sshumount.sh tt unset_color_aliases.sh)
-collect_files "$HOME/.local/bin" "$SCRIPT_DIR/home/.local/bin" bin_files
+local_bin_files=(
+    dmesg.sh
+    rec
+    lhist.sh
+    set_color_aliases.sh
+    sshmount.sh
+    sshumount.sh
+    tt
+    unset_color_aliases.sh
+)
+collect_files "$HOME/.local/bin" "$SCRIPT_DIR/home/.local/bin" local_bin_files
 

@@ -1,11 +1,10 @@
 -- vim: ts=2:sw=2:expandtab
 
 -- Status bar (bottom)
--- https://github.com/nvim-lualine/lualine.nvim
 
 return {
   {
-    'nvim-lualine/lualine.nvim',
+    'https://github.com/nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
@@ -23,11 +22,6 @@ return {
       sections = {
         lualine_a = {
           {
-            -- function()
-            --  return  "|t" .. vim.api.nvim_get_current_tabpage() ..
-            --   "|b" .. vim.api.nvim_get_current_buf() ..
-            --   "|"
-            -- end,
             function()
              return  "t" .. vim.api.nvim_get_current_tabpage() ..
               ":b" .. vim.api.nvim_get_current_buf()
@@ -80,7 +74,9 @@ return {
               '',
               color = function()
                 local gitsigns = vim.b.gitsigns_status_dict
-                if gitsigns and gitsigns.added + gitsigns.changed + gitsigns.removed == 0 then
+                if gitsigns and
+                  gitsigns.added and gitsigns.changed and gitsigns.removed and
+                  gitsigns.added + gitsigns.changed + gitsigns.removed == 0 then
                   return {fg='#b8bb26'} -- gruvbox_dark green
                 end
                 return {fg='#fe8019'} -- gruvbox_dark yellow

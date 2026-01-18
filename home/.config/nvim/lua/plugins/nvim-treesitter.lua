@@ -22,7 +22,7 @@ return {
         'bibtex',
         'c',
         'cmake',
-        -- 'comment',
+        -- 'comment', -- handled by todo-comments
         'cpp',
         'css',
         'csv',

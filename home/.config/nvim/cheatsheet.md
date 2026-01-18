@@ -14,10 +14,11 @@ vim: ts=2:sw=2:expandtab
   - Preview: `P`
     - Scroll preview: `Ctrl-f` / `Ctrl-b`
     - Focus preview: `l` ("l"ook)
-- fzf everything`:Telescope <tab>`
-- Notification history: `:lua Snacks.notifier.show_history()`
+- Leader: ` `
 - Disable indent markers: `:lua Snacks.indent.disable()`
-- Show (or do) git stuff: `:Gitsigns <tab>`
+- Git stuff:
+  - `<leader>g`
+  - `:Gitsigns <tab>`
 - Redraw screen: `Ctrl-l` ("el")
 
 ### LSP Diagnostics
@@ -114,6 +115,9 @@ vim: ts=2:sw=2:expandtab
 ## visual / UI
 - aerial integrations / plugins / keymap
 - telescope integrations / plugins / keymap
+  - or maybe snacks instead??
+- scrollbar: remove dot
+- neo-tree: don't italic changed dirs, orange is enough
 - whitespace
   - toggle visible
   - auto-trim trailing

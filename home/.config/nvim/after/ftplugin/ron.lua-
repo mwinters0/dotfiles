@@ -1,0 +1,2 @@
+-- https://github.com/ron-rs/ron
+vim.opt_local.commentstring = "// %s"

@@ -7,6 +7,7 @@ return {
     opts = {
       -- preset = "classic", -- minimal, 100% width
       preset = "modern", -- border, title, 80% width
+      -- FIXME: Make groups not red
     }
   }
 }

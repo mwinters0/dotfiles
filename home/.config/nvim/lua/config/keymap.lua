@@ -17,9 +17,9 @@ vim.keymap.set('n', '|',
   end,
   { desc = 'Focus Neo-tree' }
 )
-vim.keymap.set('n', '<leader>b', ':Neotree toggle buffers right<cr>')
-vim.keymap.set('n', '<leader>s', ':Neotree float git_status<cr>')
+-- vim.keymap.set('n', '<leader>b', ':Neotree toggle buffers right<cr>')
+-- vim.keymap.set('n', '<leader>s', ':Neotree float git_status<cr>')
 
 
 -- Aerial
-vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
+-- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")

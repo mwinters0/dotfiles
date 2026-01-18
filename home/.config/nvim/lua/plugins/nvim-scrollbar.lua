@@ -5,6 +5,7 @@ return {
   {
     'https://github.com/petertriho/nvim-scrollbar',
     opts = {
+      -- FIXME: remove distracting dot
     },
   }
 }
