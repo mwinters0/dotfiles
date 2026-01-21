@@ -4,9 +4,9 @@
 comms=(
     "com.discordapp.Discord"
     "com.slack.Slack"
-    "org.signal.Signal"
     "eu.betterbird.Betterbird"
     "im.riot.Riot"
+    "org.signal.Signal"
 )
 
 work_comms=(
@@ -16,41 +16,51 @@ work_comms=(
 
 dev=(
     "com.jgraph.drawio.desktop"
-    "org.sqlitebrowser.sqlitebrowser"
-    "io.dbeaver.DBeaverCommunity"
     "com.usebruno.Bruno"
-    "re.sonny.Workbench"
     "com.visualstudio.code"
+    "io.dbeaver.DBeaverCommunity"
+    "org.sqlitebrowser.sqlitebrowser"
+    "re.sonny.Workbench"
 )
 
 media=(
-    "org.inkscape.Inkscape"
-    "org.kde.krita"
+    "be.alexandervanhee.gradia"
     "com.mastermindzh.tidal-hifi"
-    "com.spotify.Client"
-    "org.videolan.VLC"
     "com.obsproject.Studio"
+    "com.spotify.Client"
+    "org.inkscape.Inkscape"
+    "org.kde.gwenview"
+    "org.kde.krita"
+    "org.videolan.VLC"
 )
 
 office=(
-    "org.libreoffice.LibreOffice"
-    "md.obsidian.Obsidian"
     "com.calibre_ebook.calibre"
+    "md.obsidian.Obsidian"
+    "org.libreoffice.LibreOffice"
+)
+
+ops=(
+    "io.kinvolk.Headlamp"
 )
 
 util=(
-    "com.github.tchx84.Flatseal"
     "ca.desrt.dconf-editor"
+    "com.github.tchx84.Flatseal"
+    "io.github.realmazharhussain.GdmSettings"
+    "org.gnome.Extensions"
     "org.gnome.dspy"
+    "page.tesk.Refine" 
 )
 
 web=(
     "com.google.Chrome"
+    "com.transmissionbt.Transmission"
     "org.chromium.Chromium"
     "org.torproject.torbrowser-launcher"
 )
 
-groups=(comms work_comms dev media office util web)
+groups=(comms work_comms dev media office ops util web)
 
 usage() {
     echo "Usage: $0 <group1> [group2] [group3] ..."

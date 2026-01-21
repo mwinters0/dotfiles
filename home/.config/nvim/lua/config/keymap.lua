@@ -23,3 +23,5 @@ vim.keymap.set('n', '|',
 
 -- Aerial
 -- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
+
+

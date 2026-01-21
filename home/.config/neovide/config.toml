@@ -1,0 +1,7 @@
+# https://neovide.dev/config-file.html
+tabs=false
+fork=true
+# Not released as of 0.15.2
+icon="~/.config/neovide/neovide.svg"
+# icon="/home/mwinters/.config/neovide/neovide.ico"
+# icon="/home/mwinters/.config/neovide/neovide-1024.png"

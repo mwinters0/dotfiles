@@ -9,28 +9,44 @@ vim: ts=2:sw=2:expandtab
 - `:Mason`
 
 ## UI
+- Leader: ` ` (space)
 - Open Neo-Tree (file browser): `|`
   - Help: `?`
   - Preview: `P`
     - Scroll preview: `Ctrl-f` / `Ctrl-b`
     - Focus preview: `l` ("l"ook)
-- Leader: ` `
 - Disable indent markers: `:lua Snacks.indent.disable()`
 - Git stuff:
   - `<leader>g`
   - `:Gitsigns <tab>`
 - Redraw screen: `Ctrl-l` ("el")
-
 ### LSP Diagnostics
 - Show diagnostics of current line: `Ctrl-W d`
 - Next / Prev diagnostic: `]d`, `[d`
-
 ### Autocomplete (`:h ins-completion`, `:h autocomplete`)
 - Accept: `Ctrl-Y` ("yes") / my config: `<Ctrl-CR>`
 - Cycle Suggestions Forward / Backward: `Ctrl-N` / `Ctrl-P`
 - Cancel: `Ctrl-E` ("end")
 - Trigger Omni: `Ctrl-X Ctrl-O`
 - Enable: `:set ac`
+### Tabs (`:h tabpage`)
+- New tab / edit: `:tabn` / `:tabe <file>`
+  - Location modifiers:
+    - Left: `:-tabe`
+    - First: `:0tabe`
+    - Last: `:$tabe`
+- Close this : `:tabc` / `:tabc <num>`
+  - Close other: `:tabd <num>`
+  - Close all others: `:tabo` (`:tabonly`)
+- Nav: `:tabn` / `:tabn <num>`
+  - Faster: `3gt`
+  - Flip between: `:tabn #`
+- List: `:tabs`
+- Move: `:tabm <num>`
+### Terminal
+- Open: `:terminal` (or snacks: `<leader>/`)
+- Normal mode: `Ctrl-\ Ctrl-N`
+- FYI: exit the terminal with `exit`, not `:q` et al
 
 
 ## Insert mode
@@ -49,23 +65,15 @@ vim: ts=2:sw=2:expandtab
 - Execute a normal command: `Ctrl-O`
   - Home / End: `Ctrl-O 0` / `Ctrl-O $`
 
+
 ## Normal mode
 ### Surround
 - Add: `ys<motion>}`
 - Delete: `ds}`
 
-## Tricks
+### Tricks
 - Diff unsaved: `:w !diff % -`
-
-
-## Tabs (`:h tabpage`)
-:tabnew <file>
-  :+tabnew
-  :-tabnew
-  :0tabnew
-  :$tabnew
-:tabe <num>
-
+- Alternate buffer: `Ctrl-^`
 
 ## Config (`:h options`)
 - Inspect value: `:set tw?`
@@ -103,27 +111,22 @@ vim: ts=2:sw=2:expandtab
 
 ### Filetypes
 - Default: `/usr/share/nvim/runtime/ftplugin/`
-  - Indent: `/usr/share/nvim/runtime/indent/`
+
+## Misc
+- Highlighting
+  - `:Inspect`
+  - `:verbose highlight TabLineFill`
 
 ---
 
 
 # TODO
 ## Fixes WIP
+- neovide paste keymap broken
 - finish snacks
-
-## visual / UI
 - aerial integrations / plugins / keymap
-- telescope integrations / plugins / keymap
-  - or maybe snacks instead??
 - scrollbar: remove dot
 - neo-tree: don't italic changed dirs, orange is enough
-- whitespace
-  - toggle visible
-  - auto-trim trailing
-
-## edit
-- surround actions, e.g. "surround this word in quotes"
 
 ## assistance
 - Mason non-LSP (formatters, linters, etc)
@@ -131,16 +134,51 @@ vim: ts=2:sw=2:expandtab
   - How to trigger / autotrigger?
 - LSP
   - project-wide code actions, e.g. rename / refactor
+  - https://github.com/MagicDuck/grug-far.nvim
 - LLM
 
 ## tweaks / productivity
 - sessions
-
-## misc
-- terminal
+  - https://github.com/nvim-mini/mini.sessions
+- pairs
+  - https://github.com/nvim-mini/mini.pairs/tree/main
+  - https://github.com/windwp/nvim-autopairs
 - snippets
+  - https://github.com/L3MON4D3/LuaSnip 
+- toggler
+- whitespace
+  - toggle visible
+  - auto-trim trailing
+- layouts
+  - https://github.com/folke/snacks.nvim/discussions/458
 
-## whatis
-- altfile
-- quickfixes
+## nope
+- Tabpage
+  - https://github.com/akinsho/bufferline.nvim
+    - Fundamentally: can't decide if vim tabs or notepad++ tabs
+- Sessions
+  - https://github.com/folke/persistence.nvim
+    - Fully automatic - I only want sessions on big projects
+- Picker
 
+## foo
+- https://github.com/stevearc/conform.nvim
+- NVChad
+  - https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/plugins/init.lua
+  - https://github.com/NvChad/base46/tree/v3.0/lua/base46/integrations - NVChad theme / plugin tweaks
+  - https://github.com/nvzone/menu
+  - https://github.com/nvzone/floaterm
+  - https://github.com/nvzone/timerly
+
+### dev
+- snacks.scope
+  - Should have rainbow delimeter integration, e.g.: https://github.com/lukas-reineke/indent-blankline.nvim?tab=readme-ov-file#rainbow-delimitersnvim-integration
+  - Highlight should have "min depth" -- annoying when at depth 1
+
+- Toggler
+  - Nobody has a per-filetype toggler.  Can model this from snacks.keymap
+
+- A panel below the file explorer showing the list of unsaved buffers
+- A hotkey to diff an unsaved buffer against on-disk
+
+- ? Stacked (vsplit) explorers?  Useful to e.g. browse abstract classes vs implementations

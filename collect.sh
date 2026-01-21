@@ -1,6 +1,9 @@
 #!/bin/bash
 # vim: ts=4:sw=4:expandtab
 
+# Only collects config files
+# TODO: packages, flatpaks, etc
+
 set -e
 
 # Sanity check
@@ -72,6 +75,7 @@ config_dirs=(
     hnjobs
     kitty
     mise
+    neovide
     nvim
     systemd
     zellij

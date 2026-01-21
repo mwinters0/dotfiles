@@ -27,7 +27,9 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 mkdir -p "$HOME/tmp" "$HOME/.local/"{bin,share/fonts}
 
 cp -R "$SCRIPT_DIR/home/*" ~/
+# TODO: Add sources for .zshrcm et al
 # TODO: check systemd symlinks for username
+# TODO: https://github.com/shoenig/ssh-key-sync
 
 "$SCRIPT_DIR/install/dnf_cli_packages.sh"
 "$SCRIPT_DIR/install/fedora_contributor_packages.sh"

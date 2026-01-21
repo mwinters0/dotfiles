@@ -1,7 +1,47 @@
 -- vim: ts=2:sw=2:expandtab
 
-vim.cmd("colorscheme gruvbox")
+do
+  vim.cmd("colorscheme gruvbox")
+  -- https://github.com/ellisonleao/gruvbox.nvim/blob/main/lua/gruvbox.lua
+  local gb = require("gruvbox")
 
+  -- BASH 
+  -- vim.api.nvim_set_hl(0, 'shConditional', { link = 'Normal' })
+  -- vim.api.nvim_set_hl(0, 'shLoop', { link = 'Normal' })
+  -- -- for makethisblue in
+  -- vim.api.nvim_set_hl(0, 'shFor', { link = 'GruvboxBlue' })
+  -- vim.api.nvim_set_hl(0, 'shOption', { link = 'GruvboxPurple' })
+  -- vim.api.nvim_set_hl(0, 'shStatement', { link = 'Normal' })
+  -- vim.api.nvim_set_hl(0, 'shCommandSub', { link = 'Normal' })
+  -- vim.api.nvim_set_hl(0, 'shDoubleQuote', { link = 'Normal' })
+  -- vim.api.nvim_set_hl(0, 'shSingleQuote', { link = 'Normal' })
+  -- -- shVariable is blue but DerefSimple and DerefVar are aqua ...
+  -- vim.api.nvim_set_hl(0, 'shDerefSimple', { link = 'GruvboxBlue' })
+  -- vim.api.nvim_set_hl(0, 'shDerefVar', { link = 'GruvboxBlue' })
+
+  -- TABPAGE
+  vim.api.nvim_set_hl(0, 'TabLineFill', -- background
+    {
+      fg=gb.palette.dark3,
+      bg=gb.palette.dark0_hard,
+    }
+  )
+  vim.api.nvim_set_hl(0, 'TabLineSel', -- selected tab
+    {
+      fg=gb.palette.bright_green,
+      bg=gb.palette.dark1,
+    }
+  )
+  vim.api.nvim_set_hl(0, 'TabLine', -- other tabs
+    {
+      fg=gb.palette.light4,
+      bg=gb.palette.dark1,
+    }
+  )
+end
+
+-- Always show tabline
+vim.o.showtabline = 2
 
 -- Git commits: columncolor
 vim.api.nvim_create_autocmd("FileType", {

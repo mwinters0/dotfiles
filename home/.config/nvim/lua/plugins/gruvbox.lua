@@ -2,7 +2,7 @@
 
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "https://github.com/ellisonleao/gruvbox.nvim.git",
     priority = 1000,
     config = true,
     opts = {

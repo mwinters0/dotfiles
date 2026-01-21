@@ -4,10 +4,12 @@
 
 return {
   {
-    'akinsho/bufferline.nvim',
-    version = "*",
+    'https://github.com/akinsho/bufferline.nvim',
+    version = "v4*",
     dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {
+      -- :h bufferline
+      -- https://github.com/akinsho/bufferline.nvim/blob/main/doc/bufferline.txt
       options = {
         mode = "tabs",
         show_buffer_icons = false,

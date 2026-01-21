@@ -46,6 +46,7 @@ return {
         "yamlls",
       }
     }, -- opts
+    -- FIXME: Mason doesn't support ensure_installed for linters, formatters, etc but can be done imperatively
   },
   {
     -- Configures the lua LSP to understand nvim
@@ -56,6 +57,9 @@ return {
         -- See the configuration section for more details
         -- Load luvit types when the `vim.uv` word is found
         { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        { path = "LazyVim", words = { "LazyVim" } },
+        { path = "snacks.nvim", words = { "Snacks" } },
+        { path = "lazy.nvim", words = { "LazyVim" } },
       },
     },
   },

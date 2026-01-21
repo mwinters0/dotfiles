@@ -30,10 +30,6 @@ end
 do
   -- Reference: vim.(g)lobal, (b)uffer, (w)indow, (t)abpage, (v)im, (env)
 
-  -- -- Disable netrw (per nvim-tree install instructions)
-  -- vim.g.loaded_netrw = 1
-  -- vim.g.loaded_netrwPlugin = 1
-
   -- Set leader before installing plugins
   vim.g.mapleader = " " -- leader is space
   vim.g.maplocalleader = "\\"
@@ -50,12 +46,14 @@ require("config.lazy") -- config/lazy.lua
 require("config.appearance")
 require("config.keymap")
 if vim.g.neovide then
-  -- https://neovide.dev/configuration.html
   require("config.neovide")
 end
 
--- use treesitter for cold folding
+-- use treesitter for folding
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
+-- Save globals in sessions -- needed for Tabby
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,globals,help,tabpages,terminal,winsize'
 
 
