@@ -5,7 +5,7 @@ do
   -- https://github.com/ellisonleao/gruvbox.nvim/blob/main/lua/gruvbox.lua
   local gb = require("gruvbox")
 
-  -- BASH 
+  -- BASH
   -- vim.api.nvim_set_hl(0, 'shConditional', { link = 'Normal' })
   -- vim.api.nvim_set_hl(0, 'shLoop', { link = 'Normal' })
   -- -- for makethisblue in
@@ -38,10 +38,28 @@ do
       bg=gb.palette.dark1,
     }
   )
+  vim.api.nvim_set_hl(0, 'ScrollView', -- https://github.com/dstein64/nvim-scrollview/blob/316c37c96e6ab7d15e18f878366d0497179e8891/plugin/scrollview.vim#L25
+    {
+      fg=gb.palette.bright_orange, -- not used
+      bg=gb.palette.dark0_soft,
+    }
+  )
+  vim.api.nvim_set_hl(0, 'InclineNormal', -- focused window
+    {
+      fg=gb.palette.light2 ,
+      bg=gb.palette.dark0,
+    }
+  )
+  vim.api.nvim_set_hl(0, 'InclineNormalNC', -- other windows
+    {
+      fg=gb.palette.dark4,
+      bg=gb.palette.dark0,
+    }
+  )
 end
 
 -- Always show tabline
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
 
 -- Git commits: columncolor
 vim.api.nvim_create_autocmd("FileType", {

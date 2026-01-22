@@ -4,7 +4,5 @@ eval "$(atuin init zsh --disable-up-arrow)"
 source "$HOME/.local/bin/set_color_aliases.sh"
 
 alias ll='ls -al'
-alias nv='neovide --fork'
+alias nv="neovide $@ -- \"+set titlestring=$(basename $(pwd))\""
 alias r0="sudo run0 --background=''"
-
-

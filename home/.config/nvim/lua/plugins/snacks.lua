@@ -86,6 +86,7 @@ return {
       },
       picker = { -- Telescope replacement
         enabled = true,
+        main = {current = true}
       },
       -- quickfile = { -- Disable plugins until after first paint
       --   enabled = true
@@ -97,7 +98,7 @@ return {
       -- scope = { -- TODO: I think this is auto-enabled by `indent`?
       --   enabled = true
       -- },
-      scratch = { -- Scratch buffers 
+      scratch = { -- Scratch buffers
         enabled = true
       },
       scroll = { -- Animated scroll - good for jumps
@@ -135,7 +136,7 @@ return {
     init = function()
       -- Which-key often auto-identifies weird icons for key mappings.  This seems to
       -- be the only way to declare a mapping with icons.
-      -- 
+      --
       -- You can't declare an icon via keys{} because that gets passed basically straight to
       -- nvim_set_keymap(), which complains that 'icon' is unknown.
       -- See: https://neovim.io/doc/user/api.html#nvim_set_keymap() or :h nvim_set_keymap
@@ -151,6 +152,8 @@ return {
         -- Green = misc search
         -- Orange = misc actions
         -- Cyan = help
+
+        -- FIXME: Many pickers such as help() target the first window instead of current
 
         -- GROUPS --
         {"<leader>b", group="Buffer Actions"},

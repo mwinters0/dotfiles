@@ -31,22 +31,26 @@ vim: ts=2:sw=2:expandtab
 - Enable: `:set ac`
 ### Tabs (`:h tabpage`)
 - New tab / edit: `:tabn` / `:tabe <file>`
-  - Location modifiers:
+  - Location modifier:
     - Left: `:-tabe`
     - First: `:0tabe`
     - Last: `:$tabe`
-- Close this : `:tabc` / `:tabc <num>`
+- Close: `:tabc` / `Ctrl-W c`
   - Close other: `:tabd <num>`
   - Close all others: `:tabo` (`:tabonly`)
-- Nav: `:tabn` / `:tabn <num>`
-  - Faster: `3gt`
-  - Flip between: `:tabn #`
+- Nav:
+  - Next / prev: `gt` / `gT`
+  - Go to: `3gt`
+  - Flip between: `g<Tab>`
 - List: `:tabs`
 - Move: `:tabm <num>`
 ### Terminal
 - Open: `:terminal` (or snacks: `<leader>/`)
 - Normal mode: `Ctrl-\ Ctrl-N`
 - FYI: exit the terminal with `exit`, not `:q` et al
+### Help
+- Follow link: `Ctrl-]`
+- Back: `Ctrl-O`
 
 
 ## Insert mode
@@ -93,6 +97,54 @@ vim: ts=2:sw=2:expandtab
 
 # Reference
 
+## UI
+### Windows
+- `:h CTRL-W`
+- `Ctrl-W` + ....
+  - Go to:
+    - Up `<num>`: `k` or `Ctrl-k`
+    - Down `<num>`: `j` or `Ctrl-j`
+    - Left `<num>`: `h` or `Ctrl-h`
+    - Right `<num>`: `l` or `Ctrl-l`
+    - Previous `<num>`: `p` or `Ctrl-p`
+    - Next `<num>`: `w` or `Ctrl-w`
+    - Top: `t` or `Ctrl-t`
+    - Bottom: `b` or `Ctrl-b`
+  - Resize:
+    - Change height `<num>` lines: `+` / `-`
+    - Change width: `<num>` lines: `>` / `<`
+    - Set width to `<num>`: `|`
+    - Set height to `<num>`: `_` or `Ctrl-_`
+    - Equalize: `=`
+  - Move:
+    - To new tabpage: `T` or `Ctrl-t`
+    - To top / bottom: `K` / `J`
+    - To far left / right: `H` / `L`
+    - Swap with window `<num>`: `x` or `Ctrl-x` ("exchange")
+    - Rotate up / down `<num>`: `R` / `r` or `Ctrl-r`
+  - ?:
+    - Preview window / close preview: `P` / `z`
+    - Show tag in preview: `}`
+  - Split and ...
+    - Edit alternate file: `^`
+    - Jump to definition: `d` or `Ctrl-d`
+    - Jump to declaration: `i` or `Ctrl-i`
+    - many more of these ...
+  - Action:
+    - Close: `c` or `Ctrl-c`
+    - Close others (like `:only`): `o` or `Ctrl-o`
+    - Quit (like `:quit`): `q` or `Ctrl-q`
+    - New with `<num>` height: `n` or `Ctrl-n`
+    - Split with `<num>` height: `s` or `Ctrl-s`
+    - Vsplit with `<num>` width: `v` or `Ctrl-v`
+
+
+### Misc Commands
+- Highlighting
+  - `:Inspect`
+  - `:verbose highlight TabLineFill`
+
+
 ## Config
 - Set / unset a flag: `:set guioptions+=a` / `:set guioptions -=a`
 
@@ -102,7 +154,7 @@ vim: ts=2:sw=2:expandtab
 - Show all non-default options: `:set!`
 - Browse all options: `:opt` / `:h options`
 - Inspect keymaps
-  - User keymaps: 
+  - User keymaps:
     - All / Insert / Normal / Visual: `:map` / `:imap` / `:nmap` / `:vmap`
     - Inspect origin: `:verbose imap <C-o>`
   - Builtin keymaps:
@@ -112,10 +164,7 @@ vim: ts=2:sw=2:expandtab
 ### Filetypes
 - Default: `/usr/share/nvim/runtime/ftplugin/`
 
-## Misc
-- Highlighting
-  - `:Inspect`
-  - `:verbose highlight TabLineFill`
+
 
 ---
 
@@ -140,26 +189,31 @@ vim: ts=2:sw=2:expandtab
 ## tweaks / productivity
 - sessions
   - https://github.com/nvim-mini/mini.sessions
+  - nope:
+    - https://github.com/folke/persistence.nvim
+      - Fully automatic
 - pairs
   - https://github.com/nvim-mini/mini.pairs/tree/main
   - https://github.com/windwp/nvim-autopairs
 - snippets
-  - https://github.com/L3MON4D3/LuaSnip 
+  - https://github.com/L3MON4D3/LuaSnip
 - toggler
+  - https://github.com/iquzart/toggleword.nvim/blob/main/lua/toggleword/init.lua
+  - https://github.com/nat-418/boole.nvim/blob/main/lua/boole.lua
 - whitespace
   - toggle visible
   - auto-trim trailing
+    - https://github.com/lewis6991/spaceless.nvim
 - layouts
   - https://github.com/folke/snacks.nvim/discussions/458
-
-## nope
-- Tabpage
+- tabpage
   - https://github.com/akinsho/bufferline.nvim
-    - Fundamentally: can't decide if vim tabs or notepad++ tabs
-- Sessions
-  - https://github.com/folke/persistence.nvim
-    - Fully automatic - I only want sessions on big projects
-- Picker
+    - Boo: can't decide if it's vim tabs or notepad++ tabs
+- scrollbar
+  - https://github.com/petertriho/nvim-scrollbar
+    - Yay: Nice view.  Boo: no mouse support
+  - https://github.com/dstein64/nvim-scrollview
+    - Yay: Mouse support and customization.  Boo: draws dumb and 4k-line source files.
 
 ## foo
 - https://github.com/stevearc/conform.nvim
@@ -174,6 +228,9 @@ vim: ts=2:sw=2:expandtab
 - snacks.scope
   - Should have rainbow delimeter integration, e.g.: https://github.com/lukas-reineke/indent-blankline.nvim?tab=readme-ov-file#rainbow-delimitersnvim-integration
   - Highlight should have "min depth" -- annoying when at depth 1
+
+- lazy.nvim
+  - Doesn't support setting icons in `keys{}`. See: https://github.com/folke/lazy.nvim/issues/1645
 
 - Toggler
   - Nobody has a per-filetype toggler.  Can model this from snacks.keymap

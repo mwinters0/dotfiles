@@ -25,3 +25,7 @@ vim.keymap.set('n', '|',
 -- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
 
 
+
+-- do
+--   local Snacks = require('snacks')
+-- end

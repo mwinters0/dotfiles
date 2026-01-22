@@ -1,18 +1,17 @@
 -- vim: ts=2:sw=2:expandtab
 
 -- https://neovide.dev/configuration.html
--- FIXME: When launching on command line, don't create tabs (:tabo)
+
 
 --- KEYMAPS ---
 
 -- Recreate copy/paste keymaps normally implemented by terminal
--- Note: <D> is "Command" on Mac
--- FIXME: These don't work
 vim.keymap.set('v', '<C-S-C>', '"+y') -- Copy
-vim.keymap.set('n', '<C-S-V>', '"+P') -- Paste normal mode
-vim.keymap.set('v', '<C-S-V>', '"+P') -- Paste visual mode
-vim.keymap.set('c', '<C-S-V>', '<C-R>+') -- Paste command mode
-vim.keymap.set('i', '<C-S-V>', '<ESC>l"+Pli') -- Paste insert mode
+vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-S-V>',
+  function() -- Paste
+    vim.api.nvim_paste(vim.fn.getreg('+'), false, -1)
+  end
+)
 
 local change_scale_factor = function(delta)
   vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
@@ -120,4 +119,3 @@ vim.g.neovide_progress_bar_hide_delay = 0.2
 --- MISC ---
 
 vim.g.neovide_profiler = false
-
