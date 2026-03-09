@@ -11,51 +11,41 @@ compile=(
     meson
 )
 
-containers=(
-    podman
-    podman-compose
-    podman-docker
-)
-
 util=(
     bash
+    bash-completion
     bat
-    bind-utils
+    bind9-utils
+    ca-certificates
     curl
-    difftastic
     expect
     fd-find
     fzf
     git
     git-delta
-    hdparm
     htop
     jq
+    kitty-terminfo
+    lsof
     mosh
     neovim
-    perf
     ripgrep
-    rclone
     rsync
-    fuse-sshfs
+    sysstat
     tmux
     tree
+    unzip
+    zip
     zsh
 )
 
-virt=(
-    libvirt
-    qemu
-)
-
-
 packages=(
     "${compile[@]}"
-    "${containers[@]}"
     "${util[@]}"
-    "${virt[@]}"
 )
-sudo dnf install -y "${packages[@]}"
+sudo apt install -y "${packages[@]}"
 
 
 bat cache --build
+
+sudo ln -s /usr/bin/fdfind /usr/bin/fd
