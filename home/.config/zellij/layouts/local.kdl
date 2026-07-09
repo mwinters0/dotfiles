@@ -1,0 +1,47 @@
+// vim: ts=4:sw=4:expandtab
+layout {
+    cwd "/home/mwinters"
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    pane_template name="nvim_here" {
+        // Can't set a default name for "this pane" inside a pane template
+        // name "nvim"
+        command "/usr/bin/zsh"
+        args "-i" "-c" "nvim" "."
+        start_suspended true
+        // Edit panes can't start_suspended and they die when you exit nvim
+        // edit "."
+    }
+    tab {
+        pane split_direction="vertical" {
+            pane
+            pane split_direction="horizontal" {
+                pane
+                pane
+            }
+        }
+    }
+    tab name="mail" cwd="Documents/my systems/mwinters-mail" {
+        nvim_here
+        pane
+    }
+    tab name=".config" cwd=".config" {
+        pane
+        pane
+    }
+    tab name="dotfiles" cwd="projects/public/dotfiles" {
+        nvim_here
+        pane
+    }
+}
+session_name "local"
+attach_to_session true
+pane_frames false

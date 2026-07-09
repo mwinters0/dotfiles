@@ -25,7 +25,26 @@ vim.keymap.set('n', '|',
 -- vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
 
 
+-- NoNeckPain
+local wk = require("which-key")
+wk.add({
+  {"<leader>tn", "<cmd>NoNeckPain<cr>", desc = "NoNeckPain"},
+})
 
--- do
---   local Snacks = require('snacks')
--- end
+
+
+local opts = { noremap = true, silent = true }
+
+-- Normal-mode commands
+vim.keymap.set('n', '<C-S-down>', ':MoveLine(1)<CR>', opts)
+vim.keymap.set('n', '<C-S-up>', ':MoveLine(-1)<CR>', opts)
+vim.keymap.set('n', '<C-S-left>', ':MoveHChar(-1)<CR>', opts)
+vim.keymap.set('n', '<C-S-right>', ':MoveHChar(1)<CR>', opts)
+-- vim.keymap.set('n', '<leader>wf', ':MoveWord(1)<CR>', opts)
+-- vim.keymap.set('n', '<leader>wb', ':MoveWord(-1)<CR>', opts)
+
+-- Visual-mode commands
+vim.keymap.set('v', '<C-S-down>', ':MoveBlock(1)<CR>', opts)
+vim.keymap.set('v', '<C-S-up>', ':MoveBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<C-S-left>', ':MoveHBlock(-1)<CR>', opts)
+vim.keymap.set('v', '<C-S-right>', ':MoveHBlock(1)<CR>', opts)

@@ -6,11 +6,28 @@
 --- KEYMAPS ---
 
 -- Recreate copy/paste keymaps normally implemented by terminal
-vim.keymap.set('v', '<C-S-C>', '"+y') -- Copy
-vim.keymap.set({'n', 'i', 'v', 'c'}, '<C-S-V>',
-  function() -- Paste
+-- Copy
+vim.keymap.set('v', '<C-S-C>',
+  function()
+    vim.api.nvim_cmd({cmd='yank',reg='+'},{})
+  end,
+  { silent = true, desc = 'Copy'}
+)
+-- Paste
+vim.keymap.set({'n', 'i', 'v', 'c', 't'}, '<C-S-V>',
+  function()
     vim.api.nvim_paste(vim.fn.getreg('+'), false, -1)
-  end
+  end,
+  { silent = true, desc = 'Paste'}
+)
+
+-- And Save, to test Neovide
+vim.keymap.set({'n', 'i', 'v'}, '<C-S-S>',
+  function()
+    -- vim.api.nvim_cmd({cmd='write'},{})
+    vim.cmd.write()
+  end,
+  { silent = true, desc = 'Save'}
 )
 
 local change_scale_factor = function(delta)

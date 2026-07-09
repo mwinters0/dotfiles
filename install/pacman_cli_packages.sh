@@ -10,6 +10,8 @@ compile=(
     llvm
     make
     meson
+    ninja
+    patch
 )
 
 util=(
@@ -35,14 +37,11 @@ util=(
     iptables-nft
     jq
     kitty-terminfo
-    libvirt
-    libvirt-dbus
     lsof
     mosh
     neovim
     pacman-contrib
     python-uv
-    qemu-base
     rclone
     restic
     ripgrep
@@ -61,9 +60,16 @@ util=(
     zsh
 )
 
+virt=(
+    libvirt
+    libvirt-dbus
+    qemu-base
+)
+
 packages=(
     "${compile[@]}"
     "${util[@]}"
+    "${virt[@]}"
 )
 sudo pacman -S "${packages[@]}"
 

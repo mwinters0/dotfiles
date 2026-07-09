@@ -1,0 +1,105 @@
+// vim: ts=4:sw=4:expandtab
+layout {
+    // all tabs and panes can cwd relative to here
+    cwd "/home/mwinters/projects/fedora/fdwg"
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    // Stacked 3 shells
+    pane_template name="sh3" {
+        pane stacked=true {
+            pane
+            pane
+            pane
+        }
+    }
+    pane_template name="nvim_here" {
+        // Can't set a default name for "this pane" inside a pane template
+        // name "nvim"
+        command "/usr/bin/zsh"
+        args "-i" "-c" "nvim" "."
+        start_suspended true
+        // Edit panes can't start_suspended and can't set close_on_exit=false
+        // edit "."
+    }
+    pane_template name="nvim3" {
+        pane stacked=true {
+            nvim_here name="nvim"
+            pane
+            pane
+        }
+    }
+    tab name="1" {
+        pane split_direction="vertical" {
+            pane
+            pane split_direction="horizontal" {
+                pane
+                pane
+            }
+        }
+    }
+    tab name="kf" cwd="hatlas-infra/kubefool/" {
+        nvim3
+    }
+    tab name="ansible" cwd="hatlas-infra/hetlas-ansible/" {
+        nvim3
+    }
+    tab name="ops-argo" cwd="hatlas-infra/hatlas-ops-argocd/" {
+        nvim3
+    }
+    tab name="fdwg-argo" cwd="hatlas-infra/hatlas-fdwg-argocd/" {
+        nvim3
+    }
+    tab name="trino" cwd="trino-ops/" {
+        sh3
+    }
+    tab name="dn-ops" cwd="datanommer-ops/" {
+        nvim3
+    }
+    tab name="dn-spark" cwd="datanommer-spark-postgres/" {
+        nvim3
+    }
+    tab name="dn-pq-dl" cwd="datanommer-parquet-download/" {
+        nvim3
+    }
+    tab name="pq" cwd="parquet/" {
+        sh3
+    }
+    tab name="dict" cwd="datanommer-dictionary/" {
+        nvim3
+    }
+    tab name="fdwg" cwd="fdwg/" {
+        sh3
+    }
+    tab name="docs" cwd="docs/" {
+        pane stacked=true {
+            nvim_here name="nvim"
+            pane {
+                name "docsbuilder.sh"
+                command "/usr/bin/zsh"
+                args "-i" "-c" "./docsbuilder.sh"
+                start_suspended true
+            }
+            pane
+        }
+    }
+    tab name="agreements" cwd="fdwg-agreements/" {
+        nvim3
+    }
+    tab name="reqs" cwd="analysis-requests/" {
+        nvim3
+    }
+    tab name="TODO" cwd="hatlas-todo/" {
+        nvim_here name="nvim"
+    }
+}
+session_name "fdwg"
+attach_to_session true
+pane_frames false

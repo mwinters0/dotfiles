@@ -1,0 +1,8 @@
+[Unit]
+Description=Play hourly chime
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/mwinters/.local/bin/hourly_chime.sh
+Environment=DISPLAY=:0

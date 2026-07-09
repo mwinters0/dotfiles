@@ -22,9 +22,10 @@ return {
       -- dim = { -- Dim code outside current context
       --   enabled = true
       -- },
-      explorer = { -- File explorer (neo-tree replacement) -- TODO: decide
-        enabled = true
-      },
+      -- explorer = { -- File explorer (neo-tree replacement)
+      --   -- This just controls whether it opens automatically on launch
+      --   enabled = true
+      -- },
       -- gh = { -- CLI Integration
       --   enabled = true
       -- },
@@ -241,7 +242,7 @@ return {
         --- TOGGLE ---
         { "<leader>ts", function() Snacks.scratch() end, desc = "Scratch Buffer", icon={icon='', hl='MiniIconsYellow'} },
         { "<leader>tS", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer", icon={icon='', hl='MiniIconsAzure'} },
-        {"<leader>t/", function() Snacks.terminal() end, desc = "Toggle Terminal", icon={icon='', hl='MiniIconsOrange'}},
+        { "<leader>t/", function() Snacks.terminal() end, desc = "Toggle Terminal", icon={icon='', hl='MiniIconsOrange'}},
       })
     end, -- init
     dependencies = {

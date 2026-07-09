@@ -32,6 +32,7 @@ util=(
     ripgrep
     rsync
     sysstat
+    time
     tmux
     tree
     unzip

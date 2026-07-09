@@ -1,0 +1,25 @@
+# vim: ts=4:sw=4:expandtab:ft=gitconfig
+
+[alias]
+    wt = "worktree"
+    # wt-add: Reduce mind-numbing repetition
+    #   `git wt-add upstream develop` -> `git worktree add -b upstream-develop upstream-develop upstream/develop`
+    wt-add = "!f() { git worktree add -B \"${1}/${2}\" \"${1}-${2}\" \"${1}/${2}\"; }; f"
+    # wt-clone: Clone and set up a worktree.
+    #   `git clone-wt https://someurl/foo.git` -> new project directory 'foo'
+    #   `git clone-wt https://someurl bar`     -> new project directory 'bar'
+    wt-clone = "!f() { \
+        url=\"$1\"; \
+        dir=\"${2:-$(basename \"$url\" .git)}\"; \
+        mkdir -p \"$dir\" && cd \"$dir\" && \
+        git clone \"$url\" --bare .git && \
+        remote=$(git remote | head -1) && \
+        git config remote.\"$remote\".fetch \"+refs/heads/*:refs/remotes/$remote/*\" && \
+        git fetch --all; \
+    }; f"
+
+[init]
+    defaultBranch=main
+
+[worktree]
+    useRelativePaths=true

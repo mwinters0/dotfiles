@@ -23,7 +23,6 @@ layout {
         }
     }
 }
-session_name "local"
-attach_to_session true
+//session_name "local"
+//attach_to_session true
 pane_frames false
-

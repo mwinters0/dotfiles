@@ -18,6 +18,9 @@ return {
       },
       {
         "https://github.com/neovim/nvim-lspconfig",
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+        --
+        -- Deprecated config:
         -- opts = {
         --   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "bash", "cpp", "css", "go", "json", "make", "markdown_inline", "php", "rust", "toml" },
         --   sync_install = true,
@@ -28,26 +31,27 @@ return {
         --   },
         -- },
       },
-    }, -- end dependencies
+    }, -- mason-lspconfig dependencies
     opts = {
       ensure_installed = {
         -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-        "basedpyright",
-        "bashls",
+        -- TODO: Check for npm
+        "basedpyright",  -- npm
+        "bashls",        -- npm
         "clangd",
-        "cmake",
-        "dockerls",
+        "cmake",         -- npm
+        "dockerls",      -- npm
         "gopls",
-        "html",
+        "html",          -- npm
         "lua_ls",
         "mesonlsp",
         "rust_analyzer",
         "systemd_lsp",
         "yamlls",
       }
-    }, -- opts
+    }, -- mason-lspconfig opts
     -- FIXME: Mason doesn't support ensure_installed for linters, formatters, etc but can be done imperatively
-  },
+  }, -- mason-lspconfig
   {
     -- Configures the lua LSP to understand nvim
     "https://github.com/folke/lazydev.nvim",
@@ -62,5 +66,5 @@ return {
         { path = "lazy.nvim", words = { "LazyVim" } },
       },
     },
-  },
+  }, -- lazydev
 }

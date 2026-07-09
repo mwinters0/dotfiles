@@ -1,0 +1,2 @@
+https://github.com/Nacho114/harpoon/releases/download/v0.3.0/harpoon.wasm
+https://github.com/rvcas/room/releases/download/v1.2.1/room.wasm

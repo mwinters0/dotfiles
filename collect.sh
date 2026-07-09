@@ -72,6 +72,7 @@ collect_files "$HOME" "$SCRIPT_DIR/home" home_files
 config_dirs=(
     atuin
     bat
+    git
     hnjobs
     kitty
     mise
@@ -88,11 +89,12 @@ local_bin_files=(
     dmesg.sh
     rec
     lhist.sh
+    reset_touchpad.sh
     set_color_aliases.sh
     sshmount.sh
     sshumount.sh
+    tssh
     tt
     unset_color_aliases.sh
 )
 collect_files "$HOME/.local/bin" "$SCRIPT_DIR/home/.local/bin" local_bin_files
-

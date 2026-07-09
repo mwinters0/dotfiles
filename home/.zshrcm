@@ -1,8 +1,20 @@
-eval "$(/home/mwinters/.local/bin/mise/mise activate zsh)"
+# .zshrc only runs for interactive logins
+
 eval "$(atuin init zsh --disable-up-arrow)"
+
+# gruvbox dark
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color fg:#ebdbb2,bg:#282828,hl:#fabd2f,fg+:#ebdbb2,bg+:#3c3836,hl+:#fabd2f
+  --color info:#83a598,prompt:#bdae93,spinner:#fabd2f,pointer:#83a598,marker:#fe8019,header:#665c54'
 
 source "$HOME/.local/bin/set_color_aliases.sh"
 
+# If your EDITOR is vi/vim, zsh helpfully changes your readline bindings...
+bindkey -e
+
 alias ll='ls -al'
+alias k='kubectl'
 alias nv="neovide $@ -- \"+set titlestring=$(basename $(pwd))\""
 alias r0="sudo run0 --background=''"
+rgo() {argocd app get $1 --refresh; sleep 5; argocd app sync --prune $1}
+alias claude='nocolor; claude --allow-dangerously-skip-permissions'
