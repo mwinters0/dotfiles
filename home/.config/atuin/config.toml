@@ -1,5 +1,6 @@
-[theme]
-name = "gruvbox-dark"
+## NOTE: keep all top-level (non-table) settings above the first [table] header.
+## A TOML table header applies until the next header, so anything placed after
+## e.g. [theme] silently becomes theme.<key> and is ignored by atuin.
 
 ## where to store your database, default is your system data directory
 ## linux/mac: ~/.local/share/atuin/history.db
@@ -48,11 +49,12 @@ update_check = false
 ## which filter mode to use
 ## possible values: global, host, session, directory
 # filter_mode = "global"
-filter_mode = "directory"
+filter_mode = "workspace"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
 ## in any directory within a git repository tree (default: false)
 # workspaces = false
+workspaces = true
 
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
@@ -239,3 +241,6 @@ records = true
 
 ## The port that should be used for TCP on non unix systems
 # tcp_port = 8889
+
+[theme]
+name = "gruvbox-dark"

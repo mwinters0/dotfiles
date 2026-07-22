@@ -49,9 +49,7 @@ if vim.g.neovide then
   require("config.neovide")
 end
 
--- use treesitter for folding
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- Treesitter folding is enabled per-buffer in lua/plugins/nvim-treesitter.lua
 
 -- Save globals in sessions -- needed for Tabby
 vim.opt.sessionoptions = 'blank,buffers,curdir,folds,globals,help,tabpages,terminal,winsize'

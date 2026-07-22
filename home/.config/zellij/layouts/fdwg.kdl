@@ -99,6 +99,21 @@ layout {
     tab name="TODO" cwd="hatlas-todo/" {
         nvim_here name="nvim"
     }
+    tab name="workspace" cwd="agent-workspace/" {
+        nvim_here name="nvim"
+    }
+    tab name="plugin" cwd="hatlas-infra/trino-keycloak-groups-plugin/" {
+        sh3
+    }
+    tab name="pkg-nb" cwd="packager-notebook-marimo/" {
+        sh3
+    }
+    tab name="gs-nb" cwd="getting-started-notebooks/" {
+        sh3
+    }
+    tab name="bronto" cwd="datasources/countme/mattdm-brontosaurusifier/myfork-main/" {
+        sh3
+    }
 }
 session_name "fdwg"
 attach_to_session true
